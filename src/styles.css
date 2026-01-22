@@ -1,0 +1,307 @@
+/* ============================================================================
+   A&A Premium Subtle Glass UI - Design System
+   ============================================================================ */
+
+:root {
+  /* Background Colors */
+  --aa-bg-primary: #071635;
+  
+  /* Glass UI Specifications */
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --glass-bg-hover: rgba(255, 255, 255, 0.08);
+  --glass-bg-card: rgba(255, 255, 255, 0.08);
+  --glass-bg-header: rgba(255, 255, 255, 0.05);
+  --glass-bg-input: rgba(255, 255, 255, 0.05);
+  --glass-bg-modal: rgba(255, 255, 255, 0.10);
+  
+  --glass-border: rgba(255, 255, 255, 0.10);
+  --glass-border-input: rgba(255, 255, 255, 0.12);
+  --glass-highlight: rgba(255, 255, 255, 0.10);
+  
+  --glass-blur: 12px;
+  --glass-blur-strong: 16px;
+  
+  --glass-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  --glass-shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --glass-shadow-header: 0 8px 20px rgba(0, 0, 0, 0.3);
+  
+  /* Typography */
+  --aa-text-primary: #F5F7FA;
+  --aa-text-secondary: rgba(245, 247, 250, 0.72);
+  --aa-text-muted: rgba(245, 247, 250, 0.55);
+  
+  /* Brand Colors */
+  --aa-blue-focus: rgba(100, 150, 220, 0.4);
+  --aa-blue-accent: #5a8fc7;
+  
+  /* State Colors */
+  --aa-success: #10b981;
+  --aa-success-bg: rgba(16, 185, 129, 0.12);
+  --aa-warning: #f59e0b;
+  --aa-warning-bg: rgba(245, 158, 11, 0.12);
+  --aa-error: #ef4444;
+  --aa-error-bg: rgba(239, 68, 68, 0.12);
+  
+  /* Button Gradient - subtle */
+  --glass-btn-gradient: linear-gradient(135deg, rgba(90, 143, 199, 0.3), rgba(90, 143, 199, 0.5));
+  
+  /* Border Radius */
+  --radius-card: 18px;
+  --radius-header: 14px;
+  --radius-input: 12px;
+  --radius-button: 12px;
+  --radius-chip: 8px;
+  
+  /* Transitions */
+  --transition: all 0.2s ease;
+  
+  /* Typography */
+  --aa-font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* ============================================================================
+   Global Resets & Base Styles
+   ============================================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--aa-bg-primary);
+  color: var(--aa-text-primary);
+  font-family: var(--aa-font-family);
+  line-height: 1.5;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--aa-bg-primary);
+}
+
+/* ============================================================================
+   Typography
+   ============================================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 700;
+  color: var(--aa-text-primary);
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+p {
+  margin: 0;
+}
+
+/* ============================================================================
+   Form Controls
+   ============================================================================ */
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  outline: none;
+}
+
+/* Remove number input arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+/* ============================================================================
+   Glass UI Components
+   ============================================================================ */
+
+/* Glass Card - Main content containers */
+.glass-card {
+  background: var(--glass-bg-card);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-highlight);
+  transition: var(--transition);
+}
+
+.glass-card:hover {
+  background: var(--glass-bg-hover);
+}
+
+/* Glass Header - For topbar/header sections */
+.glass-header {
+  background: var(--glass-bg-header);
+  backdrop-filter: blur(var(--glass-blur-strong));
+  -webkit-backdrop-filter: blur(var(--glass-blur-strong));
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow-header), inset 0 1px 0 var(--glass-highlight);
+}
+
+/* Glass Modal */
+.glass-modal {
+  background: var(--glass-bg-modal);
+  backdrop-filter: blur(var(--glass-blur-strong));
+  -webkit-backdrop-filter: blur(var(--glass-blur-strong));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-highlight);
+}
+
+/* Glass Input */
+.glass-input {
+  background: var(--glass-bg-input);
+  border: 1px solid var(--glass-border-input);
+  border-radius: var(--radius-input);
+  color: var(--aa-text-primary);
+  padding: 0.625rem 0.875rem;
+  font-size: 0.9375rem;
+  transition: var(--transition);
+}
+
+.glass-input:focus {
+  border-color: var(--aa-blue-accent);
+  box-shadow: 0 0 0 3px var(--aa-blue-focus);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.glass-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.glass-input::placeholder {
+  color: var(--aa-text-muted);
+}
+
+/* Button Styles */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-button);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  transition: var(--transition);
+  border: 1px solid transparent;
+  cursor: pointer;
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--glass-btn-gradient);
+  border-color: var(--glass-border);
+  color: var(--aa-text-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, rgba(90, 143, 199, 0.4), rgba(90, 143, 199, 0.6));
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.btn-success {
+  background: var(--aa-success);
+  color: white;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.btn-success:hover:not(:disabled) {
+  background: #059669;
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+
+.btn-danger {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: var(--aa-error);
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: rgba(239, 68, 68, 0.25);
+}
+
+/* Chip / Badge */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.375rem 0.875rem;
+  border-radius: var(--radius-chip);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+}
+
+.chip-draft {
+  background: var(--aa-warning-bg);
+  color: var(--aa-warning);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.chip-submitted {
+  background: var(--aa-success-bg);
+  color: var(--aa-success);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+/* ============================================================================
+   Utility Classes
+   ============================================================================ */
+
+.text-primary {
+  color: var(--aa-text-primary);
+}
+
+.text-secondary {
+  color: var(--aa-text-secondary);
+}
+
+.text-muted {
+  color: var(--aa-text-muted);
+}
