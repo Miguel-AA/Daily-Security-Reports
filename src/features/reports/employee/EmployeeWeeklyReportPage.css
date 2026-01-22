@@ -610,14 +610,25 @@
    ============================================================================ */
 
 @media (max-width: 768px) {
+  .employee-report-page {
+    margin: 0;
+  }
+
   .report-header {
-    padding: 1.5rem;
+    padding: 1.25rem;
+    border-radius: 16px;
+    margin-bottom: 1.25rem;
+  }
+
+  .report-header h1 {
+    font-size: 1.5rem;
   }
 
   .header-controls {
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
+    gap: 1rem;
   }
 
   .header-status {
@@ -633,10 +644,21 @@
   .employee-selector-container select,
   .date-picker-container input[type="date"] {
     flex: 1;
+    width: 100%;
   }
 
   .report-content {
-    padding: 1.5rem;
+    padding: 1.25rem;
+    border-radius: 16px;
+  }
+
+  .actions-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-add-action {
+    width: 100%;
   }
 
   .report-table {
@@ -656,10 +678,94 @@
   .modal-content {
     width: 95%;
     max-height: 90vh;
+    margin: 0 0.5rem;
   }
 
   .modal-header,
   .modal-body {
     padding: 1.25rem;
+  }
+
+  .submit-section {
+    align-items: stretch;
+  }
+
+  .btn-submit {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .report-header {
+    padding: 1rem;
+    border-radius: 14px;
+  }
+
+  .report-header h1 {
+    font-size: 1.25rem;
+  }
+
+  .employee-info {
+    font-size: 0.875rem;
+  }
+
+  .report-content {
+    padding: 1rem;
+    border-radius: 14px;
+  }
+
+  .report-table-container {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  .report-table {
+    font-size: 0.75rem;
+  }
+
+  .report-table th,
+  .report-table td {
+    padding: 0.5rem 0.25rem;
+  }
+
+  .report-table th {
+    font-size: 0.6875rem;
+  }
+
+  .day-date {
+    font-size: 0.6875rem;
+  }
+
+  .input-number {
+    font-size: 0.75rem;
+    padding: 0.25rem;
+  }
+
+  .btn-add-action,
+  .btn-submit {
+    font-size: 0.8125rem;
+    padding: 0.625rem 1.25rem;
+  }
+
+  .modal-content {
+    width: 100%;
+    max-height: 95vh;
+    margin: 0;
+    border-radius: 14px 14px 0 0;
+  }
+
+  .modal-header,
+  .modal-body {
+    padding: 1rem;
+  }
+
+  .action-item {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
   }
 }

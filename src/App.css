@@ -18,7 +18,13 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease, transform 0.3s ease;
+  transform: translateY(0);
+}
+
+/* Hidden State - Slides up when scrolling down */
+.app-topbar.hidden {
+  transform: translateY(-100%);
 }
 
 .topbar-content {
@@ -92,24 +98,50 @@
     padding: 1.25rem 1rem;
   }
 
+  .app-topbar.scrolled .topbar-content {
+    padding: 0.75rem 1rem;
+  }
+
   .app-logo {
     height: 48px;
   }
 
+  .app-topbar.scrolled .app-logo {
+    height: 32px;
+  }
+
   .app-title {
     font-size: 1.5rem;
+  }
+
+  .app-topbar.scrolled .app-title {
+    font-size: 1.125rem;
   }
 
   .topbar-subtitle {
     font-size: 0.8rem;
   }
 
-  .app-title {
-    font-size: 1.5rem;
+  .app-topbar.scrolled .topbar-subtitle {
+    font-size: 0.7rem;
   }
 
   .app-main {
     padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .topbar-content {
+    padding: 1rem 0.75rem;
+  }
+
+  .app-topbar.scrolled .topbar-content {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .app-main {
+    padding: 0.75rem;
   }
 }
 
